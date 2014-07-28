@@ -10,20 +10,16 @@ namespace :linked_files do
 
     task :files do
       on roles :web do
-        within shared_path do
-          fetch(:linked_files, []).each do |file|
-            upload! StringIO.new(File.read(file)), "#{shared_path}/#{file}"
-          end
+        fetch(:linked_files).each do |file|
+          upload! file, "#{shared_path}/#{file}"
         end
       end
     end
 
     task :dirs do
       on roles :web do
-        within shared_path do
-          fetch(:linked_dirs, []).each do |dir|
-            upload! "#{dir}", "#{shared_path}/", recursive: true
-          end
+        fetch(:linked_dirs).each do |dir|
+          upload! dir, "#{shared_path}/", recursive: true
         end
       end
     end
