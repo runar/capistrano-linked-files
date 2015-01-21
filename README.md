@@ -1,6 +1,6 @@
 # capistrano-linked-files
 
-This gem provides Capistrano reciepes to upload your linked files and directories. It's quite useful for files such as `config/database.yml` and `config/secrets.yml`, which are usually ignored (at least they should be) from version control systems.
+This gem provides Capistrano 3.1 reciepes to upload your linked files and directories. It's quite useful for files such as `config/database.yml` and `config/secrets.yml`, which are usually ignored (at least they should be) from version control systems.
 
 Linked files and directories are placed in the `shared` directory on your remote servers and kept between deployments. After a new deployment, a symlink is created from the `shared` directory to the `current` directory.
 
@@ -41,10 +41,24 @@ Then run the task:
 $ bundle exec cap <STAGE> linked_files:upload
 ```
 
+If you only want to upload files or dirs, then run the tasks accordingly:
+
+```
+$ bundle exec cap <STAGE> linked_files:upload_files
+$ bundle exec cap <STAGE> linked_files:upload_dirs
+```
+
 To automatically upload linked files and directories after a new deployment, add the following to your `deploy.rb`:
 
 ```ruby
+# Uploading both linked_files and dirs
 before :finishing, 'linked_files:upload'
+
+# Uploading only linked_files
+before :finishing, 'linked_files:upload_files'
+
+# Uploading only dirs
+before :finishing, 'linked_files:upload_dirs'
 ```
 
 ## Contributing
