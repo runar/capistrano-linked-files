@@ -5,6 +5,12 @@ namespace :linked_files do
     invoke 'linked_files:upload:files'
     invoke 'linked_files:upload:dirs'
   end
+  task :upload_files do
+    invoke 'linked_files:upload:files'
+  end
+  task :upload_dirs do
+    invoke 'linked_files:upload:dirs'
+  end
 
   namespace :upload do
 
