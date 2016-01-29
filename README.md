@@ -35,6 +35,12 @@ set :linked_files, %w(config/database.yml config/secrets.yml)
 set :linked_dirs, %w(bin log tmp)
 ```
 
+Ensure that the server you would like to upload files to is a part of the "web" role:
+```ruby
+server "10.10.10.10", user: 'deploy', role: %w{web}
+```
+
+
 Then run the task:
 
 ```
