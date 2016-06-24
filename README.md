@@ -41,6 +41,17 @@ Then run the task:
 $ bundle exec cap <STAGE> linked_files:upload
 ```
 
+By default, the listed files and directories are uploaded to all server roles.
+You may change this by doing the following:
+
+```ruby
+# Set upload roles using symbols
+set :upload_roles, :all
+
+# Set upload roles using arrays
+set :upload_roles, %w(web app)
+```
+
 If you only want to upload files or dirs, then run the tasks accordingly:
 
 ```
