@@ -1,5 +1,11 @@
 # capistrano-linked-files
 
+[![Gem Version](https://img.shields.io/gem/v/capistrano-linked-files.svg?style=flat-square)](http://badge.fury.io/rb/capistrano-linked-files)
+[![Build Status](https://img.shields.io/travis/runar/capistrano-linked-files/master.svg?style=flat-square)](https://travis-ci.org/runar/capistrano-linked-files)
+[![Code Climate](https://img.shields.io/codeclimate/github/runar/capistrano-linked-files.svg?style=flat-square)](https://codeclimate.com/github/runar/capistrano-linked-files)
+[![Coverage Status](https://img.shields.io/codeclimate/coverage/github/runar/capistrano-linked-files.svg?style=flat-square)](https://codeclimate.com/github/runar/capistrano-linked-files/coverage)
+[![Dependency Status](https://img.shields.io/gemnasium/runar/capistrano-linked-files.svg?style=flat-square)](https://gemnasium.com/runar/capistrano-linked-files)
+
 This gem provides Capistrano 3.1 reciepes to upload your linked files and
 directories. It's quite useful for files such as `config/database.yml` and
 `config/secrets.yml`, which are usually ignored (at least they should be) from
