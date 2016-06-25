@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
   s.files         = `git ls-files`.split($/)
+  s.test_files    = s.files.grep(/^test/)
   s.require_paths = ['lib']
 
   s.add_dependency 'capistrano', '~> 3.1'
