@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |s|
   s.name          = 'capistrano-linked-files'
-  s.version       = '1.1.1'
+  s.version       = File.read('VERSION').strip
   s.summary       = 'Upload linked files and directories.'
   s.description   = 'Adds tasks to upload your linked files and directories. '
 
