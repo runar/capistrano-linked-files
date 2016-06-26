@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage      = 'https://github.com/runar/capistrano-linked-files'
   s.license       = 'MIT'
 
-  s.files         = `git ls-files`.split($/)
+  s.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   s.test_files    = s.files.grep(/^test/)
   s.require_paths = ['lib']
 
